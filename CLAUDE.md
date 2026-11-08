@@ -8,7 +8,7 @@ A content repository for news articles, not a software project. There is no buil
 
 ## Layout
 
-Each article lives in its own top-level folder named for its date, e.g. `OCT-18-ARTICLE/`. A folder holds:
+Each article lives in its own top-level folder named for its date, `DD-MON-ARTICLE/`, e.g. `18-OCT-ARTICLE/`. A folder holds:
 
 - The article itself as `<Title-In-Kebab-Case>.docx` plus an exported `.pdf` of the same name. Keep exactly one current version of each; older drafts are deleted rather than kept as `(1)`, `(2)` copies.
 - `Article Preview.docx`, a short preview/teaser of the article.
@@ -16,7 +16,7 @@ Each article lives in its own top-level folder named for its date, e.g. `OCT-18-
 
 `.gitignore` excludes `.DS_Store` and Office lock files (`~$*`), which appear while a document is open in Word.
 
-## Custom commands
+## Skills
 
-- `/start-my-day` (`.claude/commands/start-my-day.md`): fetches and fast-forward pulls from the remote; stops instead of merging if the branch has diverged or local changes conflict.
-- `/push-commit-pr` (`.claude/commands/push-commit-pr.md`): commits uncommitted work to a `feature/*` branch (creating one if on `main`), merges latest `origin/main`, and opens a PR to `main` with `gh`. If the merge conflicts, it stops before pushing and asks the user to resolve the conflicts.
+- `/start-my-day` (`.claude/skills/start-my-day/SKILL.md`): fetches and fast-forward pulls from the remote; stops instead of merging if the branch has diverged or local changes conflict.
+- `/push-commit-pr` (`.claude/skills/push-commit-pr/SKILL.md`): commits uncommitted work to a `feature/*` branch (creating one if on `main`), merges latest `origin/main`, and opens a PR to `main` with `gh`. If the merge conflicts, it stops before pushing and asks the user to resolve the conflicts. Runs only when invoked by name (`disable-model-invocation: true`).
